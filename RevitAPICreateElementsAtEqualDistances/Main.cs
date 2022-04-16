@@ -14,7 +14,8 @@ namespace RevitAPICreateElementsAtEqualDistances
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            TaskDialog.Show("Сообщение", "Тест");
+            var mainView = new MainView(commandData);
+            mainView.ShowDialog();
             return Result.Succeeded;
 
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autodesk.Revit.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +21,11 @@ namespace RevitAPICreateElementsAtEqualDistances
     /// </summary>
     public partial class MainView : Window
     {
-        public MainView()
+        public MainView(ExternalCommandData commandData)
         {
             InitializeComponent();
             MainViewViewModel vm = new MainViewViewModel(commandData);
-            vm.CloseRecuest += (s, e) => this.Close();
+            vm.CloseRequest += (s, e) => this.Close();
             DataContext = vm;
         }
     }
